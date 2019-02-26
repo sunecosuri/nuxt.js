@@ -1,8 +1,12 @@
 <template>
   <div class="container">
-    <img src="nuxt.png" />
+    <img src="nuxt.png">
     <h2>Hello World.</h2>
-    <p><nuxt-link to="/about">About</nuxt-link></p>
+    <p>
+      <NuxtLink to="/about">
+        About
+      </NuxtLink>
+    </p>
   </div>
 </template>
 

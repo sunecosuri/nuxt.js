@@ -1,10 +1,11 @@
 {
-  "name": "with-element-ui",
+  "name": "example-with-element-ui",
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "element-ui": "^1.4.9",
-    "nuxt": "latest"
+    "element-ui": "^2",
+    "nuxt-edge": "latest",
+    "post-update": "yarn upgrade --latest"
   },
   "scripts": {
     "dev": "nuxt",

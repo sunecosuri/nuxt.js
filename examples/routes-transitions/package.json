@@ -1,12 +1,13 @@
 {
-  "name": "nuxt-routes-transitions",
+  "name": "example-routes-transitions",
   "dependencies": {
     "axios": "^0.15.3",
-    "nuxt": "latest"
+    "nuxt-edge": "latest"
   },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   }
 }

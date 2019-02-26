@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <h1>Home page 🚀</h1>
-    <nuxt-link to="/about">About page</nuxt-link>
+    <NuxtLink to="/about">
+      About page
+    </NuxtLink>
   </div>
 </template>
 
@@ -11,6 +13,9 @@ export default {
     title: 'Home page 🚀',
     meta: [
       { hid: 'description', name: 'description', content: 'Home page description' }
+    ],
+    noscript: [
+      { innerHTML: 'Body No Scripts', body: true }
     ],
     script: [
       { src: '/head.js' },

@@ -1,16 +1,17 @@
 {
-  "name": "with-buefy",
+  "name": "example-with-buefy",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   },
   "dependencies": {
     "buefy": "^0.5.4",
-    "nuxt": "latest",
+    "nuxt-edge": "latest",
     "vue": "~2.4.4"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "with-feathers",
+  "name": "example-with-feathers",
   "description": "Nuxt.js with FeathersJS",
   "version": "1.0.0",
   "main": "src/",
@@ -17,7 +17,8 @@
     "dev": "DEBUG=nuxt:* nodemon --watch src/ --watch config/ src/index.js",
     "build": "nuxt build",
     "start": "NODE_ENV=production node src/",
-    "mocha": "mocha test/ --recursive --timeout=30000"
+    "mocha": "mocha test/ --recursive --timeout=30000",
+    "post-update": "yarn upgrade --latest"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -32,7 +33,7 @@
     "feathers-rest": "^1.6.0",
     "feathers-socketio": "^1.4.2",
     "nedb": "^1.8.0",
-    "nuxt": "latest",
+    "nuxt-edge": "latest",
     "passport": "^0.3.2",
     "winston": "^2.3.0"
   },

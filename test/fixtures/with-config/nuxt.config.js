@@ -1,7 +1,16 @@
-const path = require('path')
+import path from 'path'
+import compression from 'compression'
 
-module.exports = {
+export default {
+  mode: 'unknown',
   srcDir: __dirname,
+  server: {
+    port: 8000,
+    host: '0.0.0.0',
+    timing: {
+      total: true
+    }
+  },
   router: {
     base: '/test/',
     middleware: 'noop',
@@ -11,7 +20,15 @@ module.exports = {
         {
           name: 'about-bis',
           path: '/about-bis',
-          component: '~/pages/about.vue'
+          component: '~/pages/about.vue',
+          meta: { text: 'test-meta' }
+        },
+        {
+          path: '/redirect/about-bis',
+          redirect: '/about-bis'
+        },
+        {
+          path: '/not-existed'
         }
       ]
     }
@@ -20,10 +37,13 @@ module.exports = {
   transition: 'test',
   layoutTransition: 'test',
   loadingIndicator: 'circle',
-  offline: true,
   extensions: 'ts',
   plugins: [
-    '~/plugins/test.js',
+    '~/plugins/test',
+    '~/plugins/doubled',
+    { src: '~/plugins/test.plugin', mode: 'abc' },
+    '~/plugins/test.client',
+    '~/plugins/test.server',
     { src: '~/plugins/only-client.js', ssr: false }
   ],
   loading: '~/components/loading',
@@ -41,28 +61,32 @@ module.exports = {
     }
   },
   build: {
-    stats: false,
     publicPath: '/orion/',
+    cssSourceMap: true,
+    parallel: true,
     analyze: {
       analyzerMode: 'disabled',
-      generateStatsFile: true
+      generateStatsFile: true,
+      logLevel: 'error'
     },
     styleResources: {
-      scss: '~/assets/pre-process.scss'
+      css: './assets/pre-process.css'
     },
     babel: {
       presets({ isServer }) {
         return null // Coverage: Return null, so defaults will be used.
       }
     },
+    transpile: 'vue-test',
     extend(config, options) {
       return Object.assign({}, config, {
-        devtool: 'nosources-source-map'
+        devtool: '#source-map'
       })
     }
   },
-  css: [{ src: '~/assets/app.css' }],
+  css: [{ src: '~/assets/app' }],
   render: {
+    csp: true,
     http2: {
       push: true,
       shouldPush: (file, type) => type === 'script'
@@ -72,8 +96,13 @@ module.exports = {
         return ['script', 'style', 'font'].includes(type)
       }
     },
+    compressor: function damn(...args) { return compression({ threshold: 9 })(...args) },
     static: {
       maxAge: '1y'
     }
+  },
+  globalName: 'noxxt',
+  globals: {
+    id: 'custom-nuxt-id'
   }
 }

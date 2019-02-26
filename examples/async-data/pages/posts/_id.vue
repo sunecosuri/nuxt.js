@@ -3,7 +3,11 @@
   <div class="container">
     <h1>{{ post.title }}</h1>
     <pre>{{ post.body }}</pre>
-    <p><nuxt-link to="/posts">Back to the list</nuxt-link></p>
+    <p>
+      <NuxtLink to="/posts">
+        Back to the list
+      </NuxtLink>
+    </p>
   </div>
 </template>
 
@@ -13,7 +17,7 @@ import axios from 'axios'
 export default {
   async asyncData({ params }) {
     // We can use async/await ES6 feature
-    let { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
+    const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
     return { post: data }
   },
   head() {

@@ -1,19 +1,21 @@
 <template>
   <ul>
-    <li v-for="(visit, index) in visits" :key="index"><i>{{ visit.date | hours }}</i> - {{ visit.path }}</li>
+    <li v-for="(visit, index) in visits" :key="index">
+      <i>{{ visit.date | hours }}</i> - {{ visit.path }}
+    </li>
   </ul>
 </template>
 
 <script>
 export default {
-  computed: {
-    visits() {
-      return this.$store.state.visits.slice().reverse()
-    }
-  },
   filters: {
     hours(date) {
       return date.split('T')[1].split('.')[0]
+    }
+  },
+  computed: {
+    visits() {
+      return this.$store.state.visits.slice().reverse()
     }
   }
 }

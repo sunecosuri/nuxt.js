@@ -1,12 +1,13 @@
 {
-  "name": "nuxt-async-data",
+  "name": "example-async-data",
   "dependencies": {
     "axios": "latest",
-    "nuxt": "latest"
+    "nuxt-edge": "latest"
   },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   }
 }

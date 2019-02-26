@@ -1,12 +1,13 @@
 {
-  "name": "nuxt-nested-routes",
+  "name": "example-nested-routes",
   "dependencies": {
-    "nuxt": "latest"
+    "nuxt-edge": "latest"
   },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "post-update": "yarn upgrade --latest"
   }
 }

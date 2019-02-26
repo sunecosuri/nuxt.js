@@ -1,13 +1,20 @@
 <template>
   <div class="main">
-    <h1 class="title">{{ title }}</h1>
-    <slot></slot>
+    <h1 class="title">
+      {{ title }}
+    </h1>
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
-  props: ['title']
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 

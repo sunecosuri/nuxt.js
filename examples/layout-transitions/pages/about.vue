@@ -1,13 +1,18 @@
 <template>
   <div class="container">
     <h1>About page</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <NuxtLink to="/">
+      Home page
+    </NuxtLink>
   </div>
 </template>
 
 <script>
 export default {
   layout: 'secondary',
-  transition: 'bounce'
+  transition: 'bounce',
+  head: {
+    title: 'About'
+  }
 }
 </script>

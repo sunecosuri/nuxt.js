@@ -1,11 +1,12 @@
 {
-  "name": "nuxt-firebase",
+  "name": "example-with-firebase",
   "version": "1.0.0",
   "description": "Nuxt.js with Firebase",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   },
   "keywords": [
     "nuxt",
@@ -15,6 +16,6 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
-    "nuxt": "latest"
+    "nuxt-edge": "latest"
   }
 }

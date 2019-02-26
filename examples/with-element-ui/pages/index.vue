@@ -1,43 +1,51 @@
 <template>
   <div class="elm-demo">
-    <el-form :model="account" :rules="formRules" ref="elm-demo" label-width="100px">
+    <el-form ref="elm-demo" :model="account" :rules="formRules" label-width="100px">
       <el-row type="flex" justify="flex-start">
         <el-col :xs="24" :sm="10">
           <el-form-item label="Account Name" prop="name" required>
-            <el-input v-model="account.name"></el-input>
+            <el-input v-model="account.name" />
           </el-form-item>
         </el-col>
       </el-row>
       <el-row type="flex" justify="flex-start">
         <el-col :xs="24" :sm="10">
           <el-form-item label="Date" prop="date" required>
-            <el-date-picker v-model="account.date" style="width: 100%;"></el-date-picker>
+            <el-date-picker v-model="account.date" style="width: 100%;" />
           </el-form-item>
         </el-col>
         <el-col :xs="24" :sm="{span: 3, offset: 2}">
           <el-form-item label="Subscribe" prop="subscribe">
-            <el-switch on-text="" off-text="" v-model="account.subscribe"></el-switch>
+            <el-switch v-model="account.subscribe" on-text="" off-text="" />
           </el-form-item>
         </el-col>
       </el-row>
       <el-row type="flex" justify="flex-start">
         <el-col :xs="24" :sm="10">
           <el-form-item label="Rate" prop="rate">
-            <el-rate v-model="account.rate" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></el-rate>
+            <el-rate v-model="account.rate" :colors="['#99A9BF', '#F7BA2A', '#FF9900']" />
           </el-form-item>
         </el-col>
         <el-col :xs="24" :sm="{span: 10, offset: 2}">
           <el-form-item label="Priority" prop="priority">
             <el-radio-group v-model="account.priority">
-              <el-radio label="m">Medium</el-radio>
-              <el-radio label="h">High</el-radio>
+              <el-radio label="m">
+                Medium
+              </el-radio>
+              <el-radio label="h">
+                High
+              </el-radio>
             </el-radio-group>
           </el-form-item>
         </el-col>
       </el-row>
       <el-row type="flex" justify="center">
-        <el-button type="primary" @click="submit('elm-demo')">Create</el-button>
-        <el-button @click="reset('elm-demo')">Reset</el-button>
+        <el-button type="primary" @click="submit('elm-demo')">
+          Create
+        </el-button>
+        <el-button @click="reset('elm-demo')">
+          Reset
+        </el-button>
       </el-row>
     </el-form>
   </div>

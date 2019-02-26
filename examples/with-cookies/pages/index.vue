@@ -4,22 +4,28 @@
     <table>
       <thead>
         <tr>
-          <th>Key</th><th>Value</th><th></th>
+          <th>Key</th><th>Value</th><th />
         </tr>
       </thead>
       <tbody>
         <tr v-for="(value, key) in cookies" :key="key">
           <td>{{ key }}</td>
           <td>{{ value }}</td>
-          <td><button @click="removeCookie(key)">Remove</button></td>
+          <td>
+            <button @click="removeCookie(key)">
+              Remove
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
     <h2>Add a new cookie</h2>
     <form @submit.prevent="addCookie">
-      <input type="text" v-model="newCookie.key" placeholder="Key" class="key"/>:
-      <input type="text" v-model="newCookie.value" placeholder="Value" class="value"/>
-      <button type="submit">Add</button>
+      <input v-model="newCookie.key" type="text" placeholder="Key" class="key">:
+      <input v-model="newCookie.value" type="text" placeholder="Value" class="value">
+      <button type="submit">
+        Add
+      </button>
     </form>
   </div>
 </template>

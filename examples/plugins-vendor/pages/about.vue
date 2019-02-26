@@ -1,7 +1,11 @@
 <template>
   <div class="container">
-    <img :src="thumbnailUrl" />
-    <p><nuxt-link to="/">Home</nuxt-link> - About</p>
+    <img :src="thumbnailUrl">
+    <p>
+      <NuxtLink to="/">
+        Home
+      </NuxtLink> - About
+    </p>
   </div>
 </template>
 

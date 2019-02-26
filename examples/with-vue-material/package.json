@@ -1,14 +1,15 @@
 {
-  "name": "with-vue-material",
+  "name": "example-with-vue-material",
   "version": "1.0.0",
   "dependencies": {
-    "nuxt": "latest",
+    "nuxt-edge": "latest",
     "vue": "~2.4.4",
     "vue-material": "beta"
   },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   }
 }

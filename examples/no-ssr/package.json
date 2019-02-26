@@ -1,11 +1,12 @@
 {
-  "name": "no-ssr-cmp-nuxt",
+  "name": "example-no-ssr",
   "dependencies": {
-    "nuxt": "latest"
+    "nuxt-edge": "latest"
   },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   }
 }
